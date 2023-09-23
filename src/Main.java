@@ -5,6 +5,7 @@ public class Main {
         System.out.println("Give the operation and the numbers separated by space please.\n Possible operations: ADD, SUB, DIV, MUL.\n Example: ADD 1 2");
         Scanner scanner = new Scanner(System.in);
         String line = scanner.nextLine();
+        scanner.close();
 
         Fields field = parseLine(line);
 
