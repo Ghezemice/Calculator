@@ -12,26 +12,26 @@ public class Main {
 
         if (field.getError() != null) {
             System.out.println("Error, reason: " + field.getError());
-        }
+        } else {
+            float rc = 0;
+            switch (field.getOp()) {
+                case ADD:
+                    rc = BasicMathOperations.add(field.getA(), field.getB());
+                    break;
+                case SUB:
+                    rc = BasicMathOperations.sub(field.getA(), field.getB());
+                    break;
+                case DIV:
+                    rc = BasicMathOperations.div(field.getA(), field.getB());
+                    break;
+                case MUL:
+                    rc = BasicMathOperations.mul(field.getA(), field.getB());
+                    break;
+                default:
+                    break;
+            }
 
-        float rc = 0;
-        switch (field.getOp()) {
-            case ADD:
-                rc = BasicMathOperations.add(field.getA(), field.getB());
-                break;
-            case SUB:
-                rc = BasicMathOperations.sub(field.getA(), field.getB());
-                break;
-            case DIV:
-                rc = BasicMathOperations.div(field.getA(), field.getB());
-                break;
-            case MUL:
-                rc = BasicMathOperations.mul(field.getA(), field.getB());
-                break;
-            default:
-                break;
+            System.out.println("Result: " + rc);
         }
-
-        System.out.println("Result: " + rc);
     }
 }
