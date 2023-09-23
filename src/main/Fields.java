@@ -1,5 +1,6 @@
+package main;
 public class Fields {
-    enum Operation {
+    public enum Operation {
         ADD,
         SUB,
         DIV,

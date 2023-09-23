@@ -1,3 +1,4 @@
+package main;
 public class BasicMathOperations {
     public static int add(int a, int b) {
         return a + b;
