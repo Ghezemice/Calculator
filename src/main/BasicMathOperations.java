@@ -1,10 +1,10 @@
 package main;
 public class BasicMathOperations {
-    public static int add(int a, int b) {
+    public static float add(float a, float b) {
         return a + b;
     }
 
-    public static int sub(int a, int b) {
+    public static float sub(float a, float b) {
         return a - b;
     }
 
@@ -15,7 +15,7 @@ public class BasicMathOperations {
         return a / b;
     }
 
-    public static int mul(int a, int b) {
+    public static float mul(float a, float b) {
         return a * b;
     }
 }

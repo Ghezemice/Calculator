@@ -8,17 +8,17 @@ public class BasicMathOperationsTest {
 
     @Test
     public void testAdd() {
-        Assert.assertEquals(1, BasicMathOperations.add(0, 1));
-        Assert.assertEquals(0, BasicMathOperations.add(-1, 1));
-        Assert.assertEquals(-2, BasicMathOperations.add(-1, -1));
+        Assert.assertEquals(1, BasicMathOperations.add(0, 1), 0);
+        Assert.assertEquals(0, BasicMathOperations.add(-1, 1), 0);
+        Assert.assertEquals(-2, BasicMathOperations.add(-1, -1), 0);
     }
 
     @Test
     public void testSub() {
-        Assert.assertEquals(-1, BasicMathOperations.sub(0, 1));
-        Assert.assertEquals(0, BasicMathOperations.sub(-1, -1));
-        Assert.assertEquals(-2, BasicMathOperations.sub(-1, 1));
-        Assert.assertEquals(2, BasicMathOperations.sub(1, -1));
+        Assert.assertEquals(-1, BasicMathOperations.sub(0, 1), 0);
+        Assert.assertEquals(0, BasicMathOperations.sub(-1, -1), 0);
+        Assert.assertEquals(-2, BasicMathOperations.sub(-1, 1), 0);
+        Assert.assertEquals(2, BasicMathOperations.sub(1, -1), 0);
     }
 
     @Test
