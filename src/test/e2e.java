@@ -18,6 +18,27 @@ public class e2e {
         String expectedResult = "Result: 3.0";
         Assert.assertEquals(expectedResult, actualResult);
     }
+    @Test
+    public void testSubPositive() {
+        String actualResult = runMainFunctionAndGetResult("SUB 1 2");
+
+        String expectedResult = "Result: -1.0";
+        Assert.assertEquals(expectedResult, actualResult);
+    }
+    @Test
+    public void testDivPositive() {
+        String actualResult = runMainFunctionAndGetResult("DIV 1 2");
+
+        String expectedResult = "Result: 0.5";
+        Assert.assertEquals(expectedResult, actualResult);
+    }
+    @Test
+    public void testMulPositive() {
+        String actualResult = runMainFunctionAndGetResult("MUL 1 2");
+
+        String expectedResult = "Result: 2.0";
+        Assert.assertEquals(expectedResult, actualResult);
+    }
 
     public static String runMainFunctionAndGetResult(String input) {
         InputStream inputStream = new ByteArrayInputStream(input.getBytes());
