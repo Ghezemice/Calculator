@@ -8,7 +8,7 @@ public class Main {
         String line = scanner.nextLine();
         scanner.close();
 
-        Fields field = parseLine(line);
+        Fields field = new Fields(line);
 
         if (field.getError() != null) {
             System.out.println("Error, reason: " + field.getError());
@@ -33,22 +33,5 @@ public class Main {
         }
 
         System.out.println("Result: " + rc);
-    }
-
-    public static Fields parseLine(String line) {
-        Fields fields = new Fields();
-
-        String[] strings = line.split(" ");
-
-        String error = ErrorHandling.getErrorMessage(strings);
-        if (error != null) {
-            fields.setError(error);
-            return fields;
-        }
-
-        fields.setOp(Fields.Operation.valueOf(strings[0].toUpperCase()));
-        fields.setA(Integer.parseInt(strings[1]));
-        fields.setB(Integer.parseInt(strings[2]));
-        return fields;
     }
 }

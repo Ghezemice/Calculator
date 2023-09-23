@@ -46,4 +46,18 @@ public class Fields {
     public void setError(String error) {
         this.error = error;
     }
+
+    public Fields(String line) {
+        String[] strings = line.split(" ");
+
+        String error = ErrorHandling.getErrorMessage(strings);
+        if (error != null) {
+            this.setError(error);
+            return;
+        }
+
+        this.setOp(Fields.Operation.valueOf(strings[0].toUpperCase()));
+        this.setA(Integer.parseInt(strings[1]));
+        this.setB(Integer.parseInt(strings[2]));
+    }
 }
