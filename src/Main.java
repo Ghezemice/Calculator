@@ -18,11 +18,11 @@ public class Main {
             case ADD:
                 rc = BasicMathOperations.add(field.getA(), field.getB());
                 break;
-            case DIV:
-                rc = BasicMathOperations.div(field.getA(), field.getB());
-                break;
             case SUB:
                 rc = BasicMathOperations.sub(field.getA(), field.getB());
+                break;
+            case DIV:
+                rc = BasicMathOperations.div(field.getA(), field.getB());
                 break;
             case MUL:
                 rc = BasicMathOperations.mul(field.getA(), field.getB());
@@ -40,6 +40,11 @@ public class Main {
 
         if (strings.length < 3) {
             fields.setError("Not enough parameter, expected 3, received: " + strings.length);
+            return fields;
+        }
+
+        if (strings[0].toUpperCase().equals(Fields.Operation.DIV.toString()) && strings[2].equals("0")) {
+            fields.setError("Division by zero is not allowed.");
             return fields;
         }
 
