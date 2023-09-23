@@ -7,27 +7,27 @@ public class Fields {
         MUL
     }
 
-    public int a;
+    public float a;
 
-    public int b;
+    public float b;
 
     public Operation op;
 
     public String error;
 
-    public int getA() {
+    public float getA() {
         return a;
     }
 
-    public void setA(int a) {
+    public void setA(float a) {
         this.a = a;
     }
 
-    public int getB() {
+    public float getB() {
         return b;
     }
 
-    public void setB(int b) {
+    public void setB(float b) {
         this.b = b;
     }
 
@@ -57,7 +57,7 @@ public class Fields {
         }
 
         this.setOp(Fields.Operation.valueOf(strings[0].toUpperCase()));
-        this.setA(Integer.parseInt(strings[1]));
-        this.setB(Integer.parseInt(strings[2]));
+        this.setA(Float.parseFloat(strings[1]));
+        this.setB(Float.parseFloat(strings[2]));
     }
 }

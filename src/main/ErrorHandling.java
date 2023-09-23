@@ -10,9 +10,9 @@ public class ErrorHandling {
         return false;
     }
 
-    public static boolean isInteger(String string) {
+    public static boolean isFloat(String string) {
         try {
-            Integer.parseInt(string);
+            Float.parseFloat(string);
             return true;
         }
         catch(NumberFormatException e) {
@@ -28,8 +28,8 @@ public class ErrorHandling {
         else if (!checkOperationValidity(strings[0].toUpperCase())) {
             errorMessage = strings[0] + " is not an acceptable operation. Please use ADD, SUB, DIV or MUL instead.";
         }
-        else if (!isInteger(strings[1]) || !isInteger(strings[2])) {
-            errorMessage = "At least one of the given numbers is cannot be processed. Please give only numbers!";
+        else if (!isFloat(strings[1]) || !isFloat(strings[2])) {
+            errorMessage = "At least one of the given numbers cannot be processed. Please give another one and try again.";
         }
         else if (strings[0].toUpperCase().equals(Fields.Operation.DIV.toString()) && strings[2].equals("0")) {
             errorMessage = "Division by zero is not allowed.";
