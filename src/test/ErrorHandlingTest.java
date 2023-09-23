@@ -16,7 +16,7 @@ public class ErrorHandlingTest {
 
     @Test
     public void isIntegerTest() {
-        Assert.assertEquals(true, ErrorHandling.isInteger("1"));
-        Assert.assertEquals(false, ErrorHandling.isInteger("A"));
+        Assert.assertEquals(true, ErrorHandling.isFloat("1"));
+        Assert.assertEquals(false, ErrorHandling.isFloat("A"));
     }
 }
