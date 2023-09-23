@@ -5,7 +5,7 @@ public class Main {
         System.out.println("Give the operation and the numbers separated by space please.\n Possible operations: ADD, SUB, DIV, MUL.\n Example: ADD 1 2");
         Scanner scanner = new Scanner(System.in);
         String line = scanner.nextLine();
-        scanner.close();
+        // scanner.close();
 
         Fields field = parseLine(line);
 
@@ -14,8 +14,21 @@ public class Main {
         }
 
         float rc = 0;
-        if (field.getOp() == Fields.Operation.ADD) {
-            rc = BasicMathOperations.add(field.getA(), field.getB());
+        switch (field.getOp()) {
+            case ADD:
+                rc = BasicMathOperations.add(field.getA(), field.getB());
+                break;
+            case DIV:
+                rc = BasicMathOperations.div(field.getA(), field.getB());
+                break;
+            case SUB:
+                rc = BasicMathOperations.sub(field.getA(), field.getB());
+                break;
+            case MUL:
+                rc = BasicMathOperations.mul(field.getA(), field.getB());
+                break;
+            default:
+                break;
         }
 
         System.out.println("Result: " + rc);
@@ -30,7 +43,7 @@ public class Main {
             return fields;
         }
 
-        fields.setOp(Fields.Operation.valueOf(strings[0]));
+        fields.setOp(Fields.Operation.valueOf(strings[0].toUpperCase()));
         fields.setA(Integer.parseInt(strings[1]));
         fields.setB(Integer.parseInt(strings[2]));
         return fields;
