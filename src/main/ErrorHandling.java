@@ -1,5 +1,4 @@
 package main;
-
 public class ErrorHandling {
 
     public static Boolean checkOperationValidity(String examinedText) {

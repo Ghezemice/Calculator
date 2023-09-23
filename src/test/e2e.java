@@ -40,6 +40,42 @@ public class e2e {
         Assert.assertEquals(expectedResult, actualResult);
     }
 
+    @Test
+    public void parameterErrorTest() {
+        String actualResult = runMainFunctionAndGetResult("ADD 1");
+
+        String expectedResult = "Error, reason: Not enough parameter, expected 3, received: 2";
+        Assert.assertEquals(expectedResult, actualResult);
+    }
+    @Test
+    public void firstParameterNotNumberTest() {
+        String actualResult = runMainFunctionAndGetResult("ADD f 1");
+
+        String expectedResult = "Error, reason: At least one of the given numbers is cannot be processed. Please give only numbers!";
+        Assert.assertEquals(expectedResult, actualResult);
+    }
+    @Test
+    public void secondParameterNotNumberTest() {
+        String actualResult = runMainFunctionAndGetResult("ADD 1 f");
+
+        String expectedResult = "Error, reason: At least one of the given numbers is cannot be processed. Please give only numbers!";
+        Assert.assertEquals(expectedResult, actualResult);
+    }
+    @Test
+    public void incorrectOperatorTest() {
+        String actualResult = runMainFunctionAndGetResult("NOT 1 2");
+
+        String expectedResult = "Error, reason: NOT is not an acceptable operation. Please use ADD, SUB, DIV or MUL instead.";
+        Assert.assertEquals(expectedResult, actualResult);
+    }
+    @Test
+    public void divisionByZeroTest() {
+        String actualResult = runMainFunctionAndGetResult("DIV 1 0");
+
+        String expectedResult = "Error, reason: Division by zero is not allowed.";
+        Assert.assertEquals(expectedResult, actualResult);
+    }
+
     public static String runMainFunctionAndGetResult(String input) {
         InputStream inputStream = new ByteArrayInputStream(input.getBytes());
         System.setIn(inputStream);
