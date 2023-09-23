@@ -8,7 +8,7 @@ public class BasicMathOperations {
         return a - b;
     }
 
-    public static float div(int a, int b) {
+    public static float div(float a, float b) {
         try {
             return a / b;
         } catch (ArithmeticException e) {
