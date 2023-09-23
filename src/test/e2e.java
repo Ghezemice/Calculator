@@ -51,14 +51,14 @@ public class e2e {
     public void firstParameterNotNumberTest() {
         String actualResult = runMainFunctionAndGetResult("ADD f 1");
 
-        String expectedResult = "Error, reason: At least one of the given numbers is cannot be processed. Please give only numbers!";
+        String expectedResult = "Error, reason: At least one of the given numbers cannot be processed. Please give another one and try again.";
         Assert.assertEquals(expectedResult, actualResult);
     }
     @Test
     public void secondParameterNotNumberTest() {
         String actualResult = runMainFunctionAndGetResult("ADD 1 f");
 
-        String expectedResult = "Error, reason: At least one of the given numbers is cannot be processed. Please give only numbers!";
+        String expectedResult = "Error, reason: At least one of the given numbers cannot be processed. Please give another one and try again.";
         Assert.assertEquals(expectedResult, actualResult);
     }
     @Test
