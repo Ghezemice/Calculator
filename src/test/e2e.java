@@ -1,7 +1,5 @@
 package test;
 
-import static org.junit.Assert.assertEquals;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
@@ -15,8 +13,13 @@ import main.Main;
 public class e2e {
     @Test
     public void testAddPositive() {
-        String input = "ADD 1 2";
+        String actualResult = runMainFunctionAndGetResult("ADD 1 2");
 
+        String expectedResult = "Result: 3.0";
+        Assert.assertEquals(expectedResult, actualResult);
+    }
+
+    public static String runMainFunctionAndGetResult(String input) {
         InputStream inputStream = new ByteArrayInputStream(input.getBytes());
         System.setIn(inputStream);
 
@@ -33,7 +36,6 @@ public class e2e {
         System.setIn(System.in);
         System.setOut(System.out);
 
-        String expectedResult = "Result: 3.0";
-        Assert.assertEquals(expectedResult, actualResult);
+        return actualResult;
     }
 }
