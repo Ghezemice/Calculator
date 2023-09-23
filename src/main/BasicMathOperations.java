@@ -9,11 +9,10 @@ public class BasicMathOperations {
     }
 
     public static float div(float a, float b) {
-        try {
-            return a / b;
-        } catch (ArithmeticException e) {
+        if (b == 0) {
             return Float.NaN;
         }
+        return a / b;
     }
 
     public static int mul(int a, int b) {
