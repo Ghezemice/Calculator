@@ -12,11 +12,11 @@ public class MainTest {
 
     @Test
     public void testParseLineA() {
-        Assert.assertEquals(0, new Fields("ADD 0 1").getA());
+        Assert.assertEquals(0, new Fields("ADD 0 1").getA(), 0);
     }
 
     @Test
     public void testParseLineB() {
-        Assert.assertEquals(1, new Fields("ADD 0 1").getB());
+        Assert.assertEquals(1, new Fields("ADD 0 1").getB(), 0);
     }
 }

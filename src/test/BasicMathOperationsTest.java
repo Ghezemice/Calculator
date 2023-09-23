@@ -11,6 +11,8 @@ public class BasicMathOperationsTest {
         Assert.assertEquals(1, BasicMathOperations.add(0, 1), 0);
         Assert.assertEquals(0, BasicMathOperations.add(-1, 1), 0);
         Assert.assertEquals(-2, BasicMathOperations.add(-1, -1), 0);
+        Assert.assertEquals(2147483648f, BasicMathOperations.add(1, 2147483647), 0);
+        Assert.assertEquals(-2147483648f, BasicMathOperations.add(-1, -2147483647), 0);
     }
 
     @Test
