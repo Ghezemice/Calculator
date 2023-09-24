@@ -1,4 +1,7 @@
 package main;
+
+import java.util.ArrayList;
+
 public class BasicMathOperations {
     public static float add(float a, float b) {
         return a + b;
@@ -19,10 +22,10 @@ public class BasicMathOperations {
         return a * b;
     }
 
-    public static float sum(float[] numbers) {
+    public static float sum(ArrayList<Float> numbers) {
         float result = 0;
-        for (int i = 0; i < numbers.length; i++) {
-            result += numbers[i];
+        for (int i = 0; i < numbers.size(); i++) {
+            result += numbers.get(i);
         }
         return result;
     }
