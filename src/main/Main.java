@@ -27,6 +27,9 @@ public class Main {
                 case MUL:
                     rc = BasicMathOperations.mul(field.getA(), field.getB());
                     break;
+                case SUM:
+                    rc = BasicMathOperations.sum(field.getNumbers());
+                    break;
                 default:
                     break;
             }
