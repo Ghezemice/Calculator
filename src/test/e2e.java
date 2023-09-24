@@ -57,6 +57,7 @@ public class e2e {
         String expectedResult = errorPrefix + ErrorHandling.notEnoughParametersError + "2";
         Assert.assertEquals(expectedResult, actualResult);
     }
+
     @Test
     public void tooManyParametersErrorTest() {
         String actualResult = runMainFunctionAndGetResult("ADD 1 2 3");
@@ -64,6 +65,7 @@ public class e2e {
         String expectedResult = errorPrefix + ErrorHandling.tooManyParametersError + "4";
         Assert.assertEquals(expectedResult, actualResult);
     }
+
     @Test
     public void firstParameterNotNumberTest() {
         String actualResult = runMainFunctionAndGetResult("ADD f 1");
@@ -71,6 +73,7 @@ public class e2e {
         String expectedResult = errorPrefix + ErrorHandling.wrongNumberError;
         Assert.assertEquals(expectedResult, actualResult);
     }
+
     @Test
     public void secondParameterNotNumberTest() {
         String actualResult = runMainFunctionAndGetResult("ADD 1 f");
@@ -78,6 +81,7 @@ public class e2e {
         String expectedResult = errorPrefix + ErrorHandling.wrongNumberError;
         Assert.assertEquals(expectedResult, actualResult);
     }
+
     @Test
     public void incorrectOperatorTest() {
         String actualResult = runMainFunctionAndGetResult("NOT 1 2");
@@ -85,6 +89,7 @@ public class e2e {
         String expectedResult = errorPrefix + "NOT" + ErrorHandling.wrongOperation;
         Assert.assertEquals(expectedResult, actualResult);
     }
+
     @Test
     public void divisionByZeroTest() {
         String actualResult = runMainFunctionAndGetResult("DIV 1 0");
@@ -93,7 +98,7 @@ public class e2e {
         Assert.assertEquals(expectedResult, actualResult);
     }
 
-    public static String runMainFunctionAndGetResult(String input) {
+    private static String runMainFunctionAndGetResult(String input) {
         InputStream inputStream = new ByteArrayInputStream(input.getBytes());
         System.setIn(inputStream);
 
