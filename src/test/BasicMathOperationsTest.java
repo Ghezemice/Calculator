@@ -1,4 +1,6 @@
 package test;
+import java.util.ArrayList;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -46,8 +48,25 @@ public class BasicMathOperationsTest {
 
     @Test
     public void testSum() {
-        Assert.assertEquals(10, BasicMathOperations.sum(new float[] {0, 1, 2, 3, 4}), 0);
-        Assert.assertEquals(0, BasicMathOperations.sum(new float[] {0, 2, 3, -5}), 0);
-        Assert.assertEquals(-10, BasicMathOperations.sum(new float[] {0, -1, -2, -3, -4}), 0);
+        ArrayList<Float> numbers = new ArrayList<Float>();
+        numbers.add((float) 0);
+        numbers.add((float) 1);
+        numbers.add((float) 2);
+        numbers.add((float) 3);
+        numbers.add((float) 4);
+
+        Assert.assertEquals(10, BasicMathOperations.sum(numbers), 0);
+
+        numbers.set(4, (float) -5);
+        numbers.remove(1);
+
+        Assert.assertEquals(0, BasicMathOperations.sum(numbers), 0);
+
+        numbers.add(1, (float) -1);
+        numbers.set(2, (float) -2);
+        numbers.set(3, (float) -3);
+        numbers.set(4, (float) -4);
+
+        Assert.assertEquals(-10, BasicMathOperations.sum(numbers), 0);
     }
 }

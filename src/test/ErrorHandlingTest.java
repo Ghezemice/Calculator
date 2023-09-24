@@ -11,6 +11,7 @@ public class ErrorHandlingTest {
         Assert.assertEquals(true, ErrorHandling.checkOperationValidity("SUB"));
         Assert.assertEquals(true, ErrorHandling.checkOperationValidity("DIV"));
         Assert.assertEquals(true, ErrorHandling.checkOperationValidity("MUL"));
+        Assert.assertEquals(true, ErrorHandling.checkOperationValidity("SUM"));
         Assert.assertEquals(false, ErrorHandling.checkOperationValidity("asd"));
     }
 
