@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import main.Fields;
 
-public class MainTest {
+public class FieldsTest {
     @Test
     public void testParseLineOp() {
         Assert.assertEquals(Fields.Operation.ADD, new Fields("ADD 0 1").getOp());
