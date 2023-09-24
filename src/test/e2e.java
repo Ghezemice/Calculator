@@ -42,12 +42,26 @@ public class e2e {
         String expectedResult = "Result: 2.0";
         Assert.assertEquals(expectedResult, actualResult);
     }
+    @Test
+    public void testSumPositive() {
+        String actualResult = runMainFunctionAndGetResult("SUM 1 2 3 4");
+
+        String expectedResult = "Result: 10.0";
+        Assert.assertEquals(expectedResult, actualResult);
+    }
 
     @Test
-    public void parameterErrorTest() {
+    public void notEnoughParametersErrorTest() {
         String actualResult = runMainFunctionAndGetResult("ADD 1");
 
-        String expectedResult = errorPrefix + ErrorHandling.numbersOfParametersError + "2";
+        String expectedResult = errorPrefix + ErrorHandling.notEnoughParametersError + "2";
+        Assert.assertEquals(expectedResult, actualResult);
+    }
+    @Test
+    public void tooManyParametersErrorTest() {
+        String actualResult = runMainFunctionAndGetResult("ADD 1 2 3");
+
+        String expectedResult = errorPrefix + ErrorHandling.tooManyParametersError + "4";
         Assert.assertEquals(expectedResult, actualResult);
     }
     @Test
