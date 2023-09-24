@@ -1,6 +1,13 @@
 package main;
 public class ErrorHandling {
 
+    public static String 
+        numbersOfParametersError = "Not enough parameter, expected 3, received: ",
+        wrongOperation = " is not an acceptable operation. Please use ADD, SUB, DIV or MUL instead.",
+        wrongNumberError = "At least one of the given numbers cannot be processed. Please give another one and try again.",
+        divisionByZeroError = "Division by zero is not allowed.";
+
+
     public static Boolean checkOperationValidity(String examinedText) {
         for (Fields.Operation op : Fields.Operation.values()) {
             if (op.toString().equals(examinedText)) {
@@ -23,16 +30,16 @@ public class ErrorHandling {
     public static String getErrorMessage(String[] strings) {
         String errorMessage = null;
         if (strings.length < 3) {
-            errorMessage = "Not enough parameter, expected 3, received: " + strings.length;
+            errorMessage =  numbersOfParametersError + strings.length;
         }
         else if (!checkOperationValidity(strings[0].toUpperCase())) {
-            errorMessage = strings[0] + " is not an acceptable operation. Please use ADD, SUB, DIV or MUL instead.";
+            errorMessage = strings[0] + wrongOperation;
         }
         else if (!isFloat(strings[1]) || !isFloat(strings[2])) {
-            errorMessage = "At least one of the given numbers cannot be processed. Please give another one and try again.";
+            errorMessage = wrongNumberError;
         }
         else if (strings[0].toUpperCase().equals(Fields.Operation.DIV.toString()) && strings[2].equals("0")) {
-            errorMessage = "Division by zero is not allowed.";
+            errorMessage = divisionByZeroError;
         }
         return errorMessage;
     }
