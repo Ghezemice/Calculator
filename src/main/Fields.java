@@ -1,4 +1,7 @@
 package main;
+
+import java.util.ArrayList;
+
 public class Fields {
     public enum Operation {
         ADD,
@@ -11,6 +14,8 @@ public class Fields {
     public float a;
 
     public float b;
+
+    public ArrayList<Float> numbers;
 
     public Operation op;
 
@@ -30,6 +35,18 @@ public class Fields {
 
     public void setB(float b) {
         this.b = b;
+    }
+
+    public ArrayList<Float> getNumbers() {
+        return numbers;
+    }
+
+    public void setNumbers(String[] strings) {
+        ArrayList<Float> givenNumbers = new ArrayList<Float>();
+        for (int i = 1; i < strings.length; i++) {
+            givenNumbers.add(Float.parseFloat(strings[i]));
+        }
+        this.numbers = givenNumbers;
     }
 
     public Operation getOp() {
@@ -58,7 +75,11 @@ public class Fields {
         }
 
         this.setOp(Fields.Operation.valueOf(strings[0].toUpperCase()));
-        this.setA(Float.parseFloat(strings[1]));
-        this.setB(Float.parseFloat(strings[2]));
+        if (this.getOp().equals(Operation.SUM)) {
+            this.setNumbers(strings);
+        } else {
+            this.setA(Float.parseFloat(strings[1]));
+            this.setB(Float.parseFloat(strings[2]));
+        }
     }
 }
