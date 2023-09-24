@@ -83,6 +83,14 @@ public class e2e {
     }
 
     @Test
+    public void notNumberParameterInSumTest() {
+        String actualResult = runMainFunctionAndGetResult("SUM 1 2 3 f");
+
+        String expectedResult = errorPrefix + ErrorHandling.wrongNumberError;
+        Assert.assertEquals(expectedResult, actualResult);
+    }
+
+    @Test
     public void incorrectOperatorTest() {
         String actualResult = runMainFunctionAndGetResult("NOT 1 2");
 
