@@ -43,4 +43,11 @@ public class BasicMathOperationsTest {
         Assert.assertEquals(-8, BasicMathOperations.mul(4, -2), 0);
         Assert.assertEquals(-8, BasicMathOperations.mul(-4, 2), 0);
     }
+
+    @Test
+    public void testSum() {
+        Assert.assertEquals(10, BasicMathOperations.sum(new float[] {0, 1, 2, 3, 4}), 0);
+        Assert.assertEquals(0, BasicMathOperations.sum(new float[] {0, 2, 3, -5}), 0);
+        Assert.assertEquals(-10, BasicMathOperations.sum(new float[] {0, -1, -2, -3, -4}), 0);
+    }
 }

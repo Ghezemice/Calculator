@@ -4,7 +4,8 @@ public class Fields {
         ADD,
         SUB,
         DIV,
-        MUL
+        MUL,
+        SUM
     }
 
     public float a;
